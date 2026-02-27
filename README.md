@@ -1,4 +1,4 @@
-# ✈️ Aircraft Flight Dynamics & Sensor Fusion Simulator
+# ✈️ Avionics Instruments & 3D Flight Simulator
 
 A comprehensive MATLAB-based simulation environment for aircraft flight dynamics, complete with a real-time Cockpit GUI, sensor modeling, and data logging. 
 
@@ -34,4 +34,5 @@ To ensure scalability and maintainability, the project follows a modular archite
    * `Up Arrow` / `Down Arrow`: Adjust Pitch
    * `Left Arrow` / `Right Arrow`: Adjust Yaw
    * `+` or `M`: Increase Throttle
+
    * `-` or `N`: Decrease Throttle
