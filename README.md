@@ -6,7 +6,7 @@ This project demonstrates the application of physics-based modeling, avionics in
 
 ## 📊 Data Logging & Post-Flight Analysis
 
-![Post-Flight Analysis](Post-FlighAnalysis.png)
+![Post-Flight Analysis](docs/post.png)
 *3D Post-simulation analysis for the "Standard" scenario: graphs of altitude, pitch, rate of climb, heading, and speed as a function of X and Y.*
 
 During the simulation, flight parameters are continuously monitored and recorded in a `flightLog.csv` file. This allows for extensive post-flight graphical analysis. The logged data includes:
@@ -53,4 +53,3 @@ To ensure scalability and maintainability, the project follows a clean and struc
    * `Left Arrow` / `Right Arrow`: Adjust Yaw
    * `+` or `M`: Increase Throttle
    * `-` or `N`: Decrease Throttle
-
