@@ -2,7 +2,25 @@
 
 A comprehensive MATLAB-based simulation environment for aircraft flight dynamics, complete with a real-time Cockpit GUI, sensor modeling, and data logging. 
 
-This project demonstrates the application of physics-based modeling, avionics instrumentation, and software engineering best practices (MVC-like architecture) to simulate various flight scenarios (Manual, Standard, Turbulence).
+This project demonstrates the application of physics-based modeling, avionics instrumentation, and software engineering best practices to simulate various flight scenarios (Manual, Standard, Turbulence).
+
+## 📊 Data Logging & Post-Flight Analysis
+
+![Post-Flight Analysis](post_flight_analysis.png)
+*3D Post-simulation analysis for the "Standard" scenario: graphs of altitude, pitch, rate of climb, heading, and speed as a function of X and Y.*
+
+During the simulation, flight parameters are continuously monitored and recorded in a `flightLog.csv` file. This allows for extensive post-flight graphical analysis. The logged data includes:
+
+| Column | Description |
+| :--- | :--- |
+| **Time** | Elapsed time from the start of the simulation (in seconds). |
+| **Altitude** | Aircraft altitude (in meters or arbitrary units). |
+| **Speed** | Instantaneous speed (m/s or defined scenario units). |
+| **ROC** | Rate of Climb / Descent (positive = ascending). |
+| **Pitch** | Longitudinal inclination (nose up/down) expressed in radians. |
+| **Heading** | Compass direction, in degrees or radians. |
+| **X** | Horizontal X coordinate (longitudinal movement). |
+| **Y** | Horizontal Y coordinate (lateral displacement). |
 
 ## 🛠️ Tech Stack & Skills
 * **Language:** MATLAB
@@ -10,11 +28,11 @@ This project demonstrates the application of physics-based modeling, avionics in
 * **Core Concepts:** Kinematics, Sensor Modeling, Control Systems, Real-time Rendering, Event-Driven Programming.
 
 ## 📂 Project Architecture
-To ensure scalability and maintainability, the project follows a modular architecture:
-* `main.m`: The central controller managing state, callbacks, and the main simulation loop with robust error handling (`try-catch`).
-* `src/gui/`: Handles the visual initialization (`init_cockpit_gui.m`) and real-time updates (`update_instruments.m`) of the cockpit dials.
-* `src/models/`: Contains the core physics (`kinematics_update.m`) and automatic flight scenario logic (`scenario_logic.m`).
-* `src/analysis/`: Generates post-flight 3D dashboards (`plot_post_flight.m`).
+To ensure scalability and maintainability, the project follows a clean and structured procedural architecture within a single modular script:
+* `main.m`: The central controller managing state, callbacks, and the main simulation loop.
+* **GUI Initialization**: Handles the visual setup (`uifigure`, `uigauge`) of the cockpit dials.
+* **Physics Models**: Contains the core kinematics and automatic flight scenario logic (nested functions).
+* **Data Analysis**: Generates post-flight 3D dashboards and handles `flightLog.csv` exports.
 
 ## 🚀 Features
 1. **Real-Time Cockpit GUI:** Features live gauges for Altitude, Speed, Vertical Speed (Vario), Heading, and Pitch.
@@ -34,5 +52,4 @@ To ensure scalability and maintainability, the project follows a modular archite
    * `Up Arrow` / `Down Arrow`: Adjust Pitch
    * `Left Arrow` / `Right Arrow`: Adjust Yaw
    * `+` or `M`: Increase Throttle
-
    * `-` or `N`: Decrease Throttle
